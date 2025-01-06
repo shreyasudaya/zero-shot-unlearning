@@ -22,8 +22,8 @@ def cifar100(root = './'):
     #print(os.listdir(data_dir))
     #classes = os.listdir(data_dir + "/train")
     
-    #train_ds = torchvision.datasets.CIFAR100(root='./', train=True, download=True, transform=transform)
-    #valid_ds = torchvision.datasets.CIFAR100(root='./', train=False, download=True, transform=transform)
+    #train_ds = torchvision.datasets.CIFAR100(root='./', split='train', download=True, transform=transform)
+    #valid_ds = torchvision.datasets.CIFAR100(root='./', split='test', download=True, transform=transform)
     train_ds = ImageFolder(data_dir+'/train', transform)
     valid_ds = ImageFolder(data_dir+'/test', transform)
     return train_ds, valid_ds
@@ -57,8 +57,8 @@ def svhn(root = './'):
         tt.Normalize((0.4376821, 0.4437697, 0.47280442), (0.19803012, 0.20101562, 0.19703614))
     ])
     
-    train_ds = torchvision.datasets.SVHN(root='./', train=True, download=True, transform=transform)
-    valid_ds = torchvision.datasets.SVHN(root='./', train=False, download=True, transform=transform)
+    train_ds = torchvision.datasets.SVHN(root='./', split='train', download=True, transform=transform)
+    valid_ds = torchvision.datasets.SVHN(root='./', split='test', download=True, transform=transform)
     
     return train_ds, valid_ds
 
